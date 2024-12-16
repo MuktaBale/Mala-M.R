@@ -1,0 +1,30 @@
+# Simple Python Quiz
+
+# List of questions and their corresponding answers
+questions = [
+    {"question": "What is the capital of France?", "answer": "paris"},
+    {"question": "What is 2 + 2?", "answer": "4"},
+    {"question": "What color is the sky?", "answer": "blue"}
+]
+
+# Function to ask the quiz questions
+def ask_question(question, answer):
+    user_answer = input(question + " ").lower()
+    if user_answer == answer:
+        print("Correct!")
+        return True
+    else:
+        print(f"Wrong! The correct answer is {answer}.")
+        return False
+
+# Main quiz function
+def start_quiz():
+    score = 0
+    for q in questions:
+        if ask_question(q["question"], q["answer"]):
+            score += 1
+    
+    print(f"\nYour final score is {score}/{len(questions)}")
+
+# Run the quiz
+start_quiz()
